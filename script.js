@@ -15,6 +15,22 @@ firstNameInput.onkeyup = () => {
   firstNameInput.classList.remove("is-valid");
   firstNameInput.classList.remove("is-invalid");
 };
+lastNameInput.onkeyup = () => {
+  lastNameInput.classList.remove("is-valid");
+  lastNameInput.classList.remove("is-invalid");
+};
+submitBtn.onkeyup = () => {
+  submitBtn.classList.remove("is-valid");
+  submitBtn.classList.remove("is-invalid");
+};
+passwordInput.onkeyup = () => {
+  passwordInput.classList.remove("is-valid");
+  passwordInput.classList.remove("is-invalid");
+};
+emailInput.onkeyup = () => {
+  emailInput.classList.remove("is-valid");
+  emailInput.classList.remove("is-invalid");
+};
 
 submitBtn.onclick = () => {
   (isFirstNameOK = false),
