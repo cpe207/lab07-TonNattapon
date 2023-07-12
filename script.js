@@ -33,28 +33,35 @@ emailInput.onkeyup = () => {
 };
 
 submitBtn.onclick = () => {
-  (isFirstNameOK = false),
-    (isLastNameOK = false),
-    (isEmailOK = false),
-    (isPasswordOK = false),
-    "" === firstNameInput
-      ? firstNameInput.classList.add("is-invalid")
-      : firstNameInput.classList.add("is-valid"),
-    (isFirstNameOK = true),
-    "" === lastNameInput
-      ? lastNameInput.classList.add("is-invalid")
-      : lastNameInput.classList.add("is-valid"),
-    (isLastNameOK = true),
-    !1 === validateEmail(emailInput.value)
-      ? emailInput.classList.add("is-invalid")
-      : emailInput.classList.add("is-valid"),
-    (isEmailOK = true),
-    passwordInput.value.length >= 6
-      ? (passwordInput.classList.add("is-valid"), (isPasswordOK = true))
-      : passwordInput.classList.add("is-invalid"),
-    isFirstNameOK &&
-      isLastNameOK &&
-      isEmailOK &&
-      isPasswordOK &&
-      alert("Registered successfully");
+  isFirstNameOK = false;
+  isLastNameOK = false;
+  isEmailOK = false;
+  isPasswordOK = false;
+  if (firstNameInput.value === "") {
+    firstNameInput.classList.add("is-invalid");
+  } else {
+    firstNameInput.classList.add("is-valid");
+    isFirstNameOK = true;
+  }
+  if (lastNameInput.value === "") {
+    lastNameInput.classList.add("is-invalid");
+  } else {
+    lastNameInput.classList.add("is-valid");
+    isLastNameOK = true;
+  }
+  if (validateEmail(emailInput.value) === true) {
+    emailInput.classList.add("is-valid");
+    isEmailOK = true;
+  } else {
+    emailInput.classList.add("is-invalid");
+  }
+  if (passwordInput.value.length >= 6) {
+    passwordInput.classList.add("is-valid");
+    isPasswordOK = true;
+  } else {
+    passwordInput.classList.add("is-invalid");
+  }
+  if (isFirstNameOK && isLastNameOK && isEmailOK && isPasswordOK === true) {
+    alert("Registered successfully");
+  }
 };
